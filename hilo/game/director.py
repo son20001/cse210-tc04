@@ -65,7 +65,7 @@ class Director:
             self (Director): An instance of Director.
         """
         print("Your score is: {self.score}")
-        if self.dealer.can_play():
+        if self.score > 0:
             choice = input("Keep playing? [y/n] ")
             self.keep_playing = (choice.lower() == "y")
         else:
