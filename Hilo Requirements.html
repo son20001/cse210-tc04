@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)https://mmanley29.bitbucket.io/module04/hilo_requirements.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hilo Requirements</title>
+    <link rel="icon" type="image/png" href="https://mmanley29.bitbucket.io/resources/images/oneCubed.png">
+    <link rel="stylesheet" type="text/css" href="./Hilo Requirements_files/style.css">
+<link rel="stylesheet" type="text/css" href="./Hilo Requirements_files/prettify.css"></head>
+
+<body data-new-gr-c-s-check-loaded="14.1014.0" data-gr-ext-installed=""><div id="StayFocusd-infobar" style="display: none; top: 187.2px;">
+    <img src="chrome-extension://laankejkbhbdhmipfmgcngdelahlfoji/common/img/eye_19x19_red.png">
+    <span id="StayFocusd-infobar-msg"></span>
+    <span id="StayFocusd-infobar-links">
+        <a id="StayFocusd-infobar-never-show">hide forever</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a id="StayFocusd-infobar-hide">hide once</a>
+    </span>
+</div>
+<header>
+    <div class="logo">
+        <div class="upper">BYU</div>
+        <div class="lower">Idaho</div>
+    </div>
+    <h1>CSE 210 | Programming With Classes</h1>
+</header>
+<article>
+    <h1>Hilo</h1>
+    <openingquote>
+        Life is not a matter of holding good cards,<br>
+        but sometimes, playing a poor hand well.<br><br>
+        - Jack London -
+    </openingquote>
+    <h2>Overview</h2>
+    <p>
+        Hilo is a game in which the player guesses if the next card drawn by the dealer will be higher or lower than the previous one. Points are won or lost based on whether or not the player guessed correctly. 
+    </p>
+    <h2>Rules</h2>
+    <p>
+        Hilo is played according to the following rules.
+        </p><ol>
+            <li><div>
+                Individual cards are represented as a number from 1 to 13. - dealer.get_card()
+            </div></li>
+            <li><div>
+                The player starts the game with 300 points.  - director.start_game()
+            </div></li>
+            <li><div>
+                The dealer displays the current card. - director.do_output()
+            </div></li>
+            <li><div>
+                The player guesses if the next one will be higher or lower. dealer.get_guess()
+            </div></li>
+            <li><div>
+                The dealer shows the next card. - dealer.get_card()
+            </div></li>
+            <li><div>
+                The player earns 100 points if they guessed correctly. dealer.get_points() - director.do_update()
+            </div></li>
+            <li><div>
+                The player loses 75 points if they guessed incorrectly. dealer.get_points() - director.do_update()
+            </div></li>
+            <li><div>
+                If a player reaches 0 points the game is over. Otherwise, the 
+                player decides whether or not to play again. - dealer.can_play()
+            </div></li>
+            <li><div>
+                If a player decides not to play again the game is over.  director.do_outputs()
+            </div></li>
+        </ol>
+    <p></p>
+    <h2>Interface</h2>
+    <p>
+</p><pre class="prettyprint lang-py prettyprinted" style=""><span class="typ">The</span><span class="pln"> card </span><span class="kwd">is</span><span class="pun">:</span><span class="pln"> </span><span class="lit">11</span><span class="pln">
+</span><span class="typ">Higher</span><span class="pln"> </span><span class="kwd">or</span><span class="pln"> lower</span><span class="pun">?</span><span class="pln"> </span><span class="pun">[</span><span class="pln">h</span><span class="pun">/</span><span class="pln">l</span><span class="pun">]</span><span class="pln"> h
+</span><span class="typ">Next</span><span class="pln"> card was</span><span class="pun">:</span><span class="pln"> </span><span class="lit">13</span><span class="pln">
+</span><span class="typ">Your</span><span class="pln"> score </span><span class="kwd">is</span><span class="pun">:</span><span class="pln"> </span><span class="lit">400</span><span class="pln">
+</span><span class="typ">Keep</span><span class="pln"> playing</span><span class="pun">?</span><span class="pln"> </span><span class="pun">[</span><span class="pln">y</span><span class="pun">/</span><span class="pln">n</span><span class="pun">]</span><span class="pln"> y
+    
+</span><span class="typ">The</span><span class="pln"> card </span><span class="kwd">is</span><span class="pun">:</span><span class="pln"> </span><span class="lit">13</span><span class="pln">
+</span><span class="typ">Higher</span><span class="pln"> </span><span class="kwd">or</span><span class="pln"> lower</span><span class="pun">?</span><span class="pln"> </span><span class="pun">[</span><span class="pln">h</span><span class="pun">/</span><span class="pln">l</span><span class="pun">]</span><span class="pln"> h
+</span><span class="typ">Next</span><span class="pln"> card was</span><span class="pun">:</span><span class="pln"> </span><span class="lit">4</span><span class="pln">
+</span><span class="typ">Your</span><span class="pln"> score </span><span class="kwd">is</span><span class="pun">:</span><span class="pln"> </span><span class="lit">325</span><span class="pln">
+</span><span class="typ">Keep</span><span class="pln"> playing</span><span class="pun">?</span><span class="pln"> </span><span class="pun">[</span><span class="pln">y</span><span class="pun">/</span><span class="pln">n</span><span class="pun">]</span><span class="pln"> _
+    
+</span><span class="pun">...</span><span class="pln"> 
+
+</span><span class="typ">The</span><span class="pln"> card </span><span class="kwd">is</span><span class="pun">:</span><span class="pln"> </span><span class="lit">12</span><span class="pln">
+</span><span class="typ">Higher</span><span class="pln"> </span><span class="kwd">or</span><span class="pln"> lower</span><span class="pun">?</span><span class="pln"> </span><span class="pun">[</span><span class="pln">h</span><span class="pun">/</span><span class="pln">l</span><span class="pun">]</span><span class="pln"> h
+</span><span class="typ">Next</span><span class="pln"> card was</span><span class="pun">:</span><span class="pln"> </span><span class="lit">8</span><span class="pln">
+</span><span class="typ">Your</span><span class="pln"> score </span><span class="kwd">is</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pln">
+</span><span class="pun">&gt;</span><span class="pln"> _
+
+</span><span class="pun">...</span><span class="pln"> 
+
+</span><span class="typ">The</span><span class="pln"> card </span><span class="kwd">is</span><span class="pun">:</span><span class="pln"> </span><span class="lit">5</span><span class="pln">
+</span><span class="typ">Higher</span><span class="pln"> </span><span class="kwd">or</span><span class="pln"> lower</span><span class="pun">?</span><span class="pln"> </span><span class="pun">[</span><span class="pln">h</span><span class="pun">/</span><span class="pln">l</span><span class="pun">]</span><span class="pln"> h
+</span><span class="typ">Next</span><span class="pln"> card was</span><span class="pun">:</span><span class="pln"> </span><span class="lit">10</span><span class="pln">
+</span><span class="typ">Your</span><span class="pln"> score </span><span class="kwd">is</span><span class="pun">:</span><span class="pln"> </span><span class="lit">400</span><span class="pln">
+</span><span class="typ">Keep</span><span class="pln"> playing</span><span class="pun">?</span><span class="pln"> </span><span class="pun">[</span><span class="pln">y</span><span class="pun">/</span><span class="pln">n</span><span class="pun">]</span><span class="pln"> n
+</span><span class="pun">&gt;</span><span class="pln"> _</span></pre>
+
+    <p></p>
+    <h2>Requirements</h2>
+    <p>
+        Your program must also meet the following requirements.
+        </p><ol>
+            <li><div>
+                The program must use the provided Hilo project template. 
+            </div></li>
+            <li><div>
+                The program must have a README file with assignment and author 
+                names.
+            </div></li>
+            <li><div>
+                The program must have at least two classes.
+            </div></li>
+            <li><div>
+                Each module, class and method must have a corresponding comment using the style demonstrated in the solo checkpoint.
+            </div></li>
+            <li><div>
+                The game must remain generally true to the order of play described in the rules.
+            </div></li>
+        </ol>
+    <p></p>
+    <h2>Suggestions</h2>
+    <p>
+        Make the game your own by enhancing it any way you like. A few ideas are as follows.
+        </p><ol>
+            <li><div>
+                Enhanced input validation with user-friendly messages.
+            </div></li>
+            <li><div>
+                Enhanced game play and game over messages.
+            </div></li>
+            <li><div>
+                Enhanced card representation (incorporate Jack, Queen, King and Ace)
+            </div></li>
+            <li><div>
+                Enhanced game display (e.g. different colors for correct or 
+                incorrect guesses)
+            </div></li>
+        </ol>
+    <p></p>
+</article>
+<footer>
+    Copyright © 2020, Brigham Young University - Idaho. All
+    rights reserved.
+</footer>
+</body></html>
