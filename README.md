@@ -33,6 +33,8 @@ root                    (project root folder)
 ---
 * Python 3.8.0
 
-## Authors
+## Authors (Team. Rex)
 ---
 * TODO: Add your names and emails here
+
+Yucheol Son
