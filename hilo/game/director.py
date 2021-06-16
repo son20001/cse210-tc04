@@ -38,9 +38,9 @@ class Director:
             self (Director): An instance of Director.
             dealer (Dealer): An instance of Dealer.
         """
-        self.dealer.get_card()
+        self.dealer.draw_cards()
+        print(f"The card is: {self.dealer.card[0]}")
         self.dealer.ask_guess()
-        self.get_next_card()
         
     def do_updates(self):
         """Updates the important game information for each round of play. In 
@@ -49,7 +49,6 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        print()
         if self.dealer.judge():
             self.score += 100
         else:
@@ -64,6 +63,7 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
+        print(f"Next card was: {self.dealer.card[1]}")
         print("Your score is: {self.score}")
         if self.score > 0:
             choice = input("Keep playing? [y/n] ")
