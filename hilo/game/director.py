@@ -52,7 +52,11 @@ class Director:
         if self.dealer.judge():
             self.score += 100
         else:
-            self.score -= 75
+            if self.score >= 100:
+                self.score -= 75
+            else:
+                self.score = 0
+
 
             
         
@@ -64,9 +68,10 @@ class Director:
             self (Director): An instance of Director.
         """
         print(f"Next card was: {self.dealer.card[1]}")
-        print("Your score is: {self.score}")
+        print(f"Your score is: {self.score}")
         if self.score > 0:
             choice = input("Keep playing? [y/n] ")
             self.keep_playing = (choice.lower() == "y")
         else:
             self.keep_playing = False
+        print("")
