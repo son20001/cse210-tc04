@@ -1,5 +1,7 @@
 import random
 
+#Question is the game infinity?
+
 class Dealer:
     """A code template for a person who throws dice. The responsibility of this 
     class of objects is to throw the dice, keep track of the values, the score 
