@@ -6,7 +6,9 @@ class Director:
     sequence of play.
     
     Attributes:
-
+        keep_playing (boolean): Whether or not the player wants to keep playing.
+        score (number): The total number of points earned.
+        dealer (Dealer): An instance of the class of objects known as Dealer.
     """
 
     def __init__(self):
@@ -15,9 +17,9 @@ class Director:
         Args:
             self (Director): an instance of Director.
         """
+        self.keep_playing = True
         self.score = 0
         self.dealer = Dealer()
-        self.keep_playing = True
 
     def start_game(self):
         """Starts the game loop to control the sequence of play.
@@ -32,11 +34,10 @@ class Director:
 
     def get_inputs(self):
         """Gets the inputs at the beginning of each round of play. In this case,
-        that means throwing the dice.
+        that means that dealer drawing cards and that player answer higher or lower.
 
         Args:
             self (Director): An instance of Director.
-            dealer (Dealer): An instance of Dealer.
         """
         self.dealer.draw_cards()
         print(f"The card is: {self.dealer.card[0]}")
@@ -62,7 +63,7 @@ class Director:
         
     def do_outputs(self):
         """Outputs the important game information for each round of play. In 
-        this case, that means the dice that were rolled and the score.
+        this case, that means the next card that were drawed and the score.
 
         Args:
             self (Director): An instance of Director.
