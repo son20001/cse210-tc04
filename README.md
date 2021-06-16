@@ -38,3 +38,4 @@ root                    (project root folder)
 * TODO: Add your names and emails here
 
 Yucheol Son
+David Raya
